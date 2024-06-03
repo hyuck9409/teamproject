@@ -14,7 +14,7 @@
 <body>
 <div class="container">
  <div class="box">
- 	<form>
+ 	<form action="./login" method="post">
 	 	<div class="login-inputs">
 	 		<div class="login-input">
 	 			<label class="input-label">이메일</label>
