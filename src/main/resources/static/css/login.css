@@ -120,4 +120,5 @@ body {
 	font-weight: 500;
 	line-height: var(--line-height-text-sm, 20px); /* 142.857% */
 	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
+	
 }
