@@ -26,7 +26,8 @@ body * {
 </style>
 </head>
 <body>
-	<table class="table table-bordered">
+<h2>${dto.nickname } 님의 프로필</h2>
+	<table class="table table-bordered" style="width: 800px;">
 		<tr>
 			<th>번호</th>
 			<th>작성자</th>
@@ -36,16 +37,14 @@ body * {
 			<th>숨김 버튼</th>
 		</tr>
 		<tr>
-			<td>번호</td>
-			<td>작성자</td>
-			<td>내용</td>
-			<td>작성날짜</td>
-			<td>숨김여부</td>
-			<td>
-				<button type="button" id="hideButton" class="btn-signup btn-secondary">숨김</button>
-			</td>
-		</tr>
-
+	<td>${dto.memo_id}</td>
+	<td>${dto.writer}</td>
+	<td>${dto.content}</td>
+	<td>${dto.created_at}</td>
+	<td></td>
+	<td><button type="button" id="hideButton" class="btn-signup btn-secondary">숨김</button></td>
+	</tr>
+	
 	</table>
 	<script>
 	document.getElementById('hideButton').addEventListener('click', function() {
