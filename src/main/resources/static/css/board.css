@@ -1,0 +1,93 @@
+.list-header{
+	margin-top: 60px;
+	margin-bottom: 80px;
+}
+
+.list-title{
+	text-align: center;
+	color: #FFF;
+	font-family: "Noto Sans KR";
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: 60px; /* 100% */
+	letter-spacing: -0.4px;
+	margin-bottom: 20px;
+}
+
+.list-buttons {
+	display: flex;
+	justify-content: right;
+	padding-right: 100px;
+	gap: 30px;
+}
+
+.detail-buttons{
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.icon-button{
+	display: flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%; 
+}
+
+.list-container{
+	padding: 0 120px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.list-item{
+	width: 200px;
+	height: 200px;
+	background: var(--color-orange-400, #FB923C);
+}
+
+.detail-item{
+	width: 400px;
+	height: 400px;
+	background: var(--color-red-400, #F87171);
+	margin-bottom: 40px;
+}
+.detail-page{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.page-info{
+	color: #FFF;
+	text-align: center;
+	font-family: "Noto Sans KR";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px; /* 125% */
+}
+
+.page-button{
+	
+	display: flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%; 
+	background-color: transparent;
+	border: 1px solid #fff;
+}
+.page-button:hover{
+	background-color: rgba(255,255,255,0.1);
+}
+
+.page-button-right img {
+	transform: rotate(180deg);
+}
