@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 .settings
 .mvn
+.metadata
 
 ### STS ###
 .apt_generated

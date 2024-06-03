@@ -15,7 +15,11 @@
 <body>
 <div class="container">
 	<div class="box">
-		<div class="detail-item"></div>
+		<div class="detail-item scrollbar">
+			<div class="detail-text overflow">어쩌구저쩌구 생일 축하한다 너는 최고의 친구야 생일 축하한다는 아주아주 길고 상세한 내용 가슴이 절절하고 행복함이 묻어나는 내용 어쩌구저쩌구 생일 축하한다 너는 최고의 친구야 생일 축하한다는 아주아주 길고 상세한 내용 가슴이 절절하고 행복함이 묻어나는 내용 어쩌구저쩌구 생일 축하한다 너는 최고의 친구야 생일 축하한다는 아주아주 길고 상세한 내용 가슴이 절절하고 행복함이 묻어나는 내용 어쩌구저쩌구 생일 축하한다 너는 최고의 친구야 생일 축하한다는 아주아주 길고 상세한 내용 가슴이 절절하고 행복함이 묻어나는 내용 </div>
+			<div class="detail-nickname">NICKNAME</div>
+			<div class="detail-createdat">2024.06.03</div>
+		</div>
 		<div class="detail-page">
 		 	<button class="page-button">
 		 		<img alt="" src="./image/icon-left.svg">
