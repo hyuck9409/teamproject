@@ -15,7 +15,11 @@
 <body>
 <div class="list-header">
  <div class="list-title">어쩌구님의 보드</div>
- <div class="list-buttons">
+ <div class="list-buttons"> 	
+ 	<button class="icon-button-full" onclick="">
+ 		<img alt="" src="./image/icon-log-out.svg">
+ 		<span class="icon-button-text">로그아웃</span>
+ 	</button>
  	<button class="icon-button">
  		<img alt="" src="./image/icon-image.svg">
  	</button>

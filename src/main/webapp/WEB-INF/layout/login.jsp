@@ -14,7 +14,7 @@
 <body>
 <div class="container">
  <div class="box">
- 	<form action="./login" method="post">
+ 	<form action="./checklogin" method="post">
 	 	<div class="login-inputs">
 	 		<div class="login-input">
 	 			<label class="input-label">이메일</label>
@@ -34,6 +34,10 @@
  	</form>
  </div>
 </div>
+
+<script type="text/javascript">
+
+</script>
 
 
 </body>

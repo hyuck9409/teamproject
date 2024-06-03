@@ -20,11 +20,11 @@ public class UserService {
 		userInter.insertUser(dto);
 	}
 	
-	public boolean isEqualPassCheck(int num,String passwd)
+	public boolean isEqualPassCheck(int user_id,String password)
 	{
 		Map<String, Object> map=new HashMap<String, Object>();
-		map.put("num", num);
-		map.put("passwd", passwd);
+		map.put("user_id", user_id);
+		map.put("password", password);
 		int n=userInter.isEqualPassCheck(map);
 		return n==1?true:false;
 	}

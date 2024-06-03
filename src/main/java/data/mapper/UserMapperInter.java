@@ -16,7 +16,7 @@ public interface UserMapperInter {
 			""")
 	public void insertUser(UserDto dto);
 	
-	@Select("select count(*) from user where num=#{num} and password=#{password}")
+	@Select("select count(*) from user where user_id=#{user_id} and password=#{password}")
 	public int isEqualPassCheck(Map<String, Object> map);
 	
 	@Select("""

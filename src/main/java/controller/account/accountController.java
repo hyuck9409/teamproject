@@ -34,44 +34,42 @@ public class accountController {
 		userService.insertUser(dto);
 		return "redirect:./login";
 	}
+    
+    @GetMapping("/profile")
+    public String showProfile() {
+        return "layout/profile"; // 
+    }
+    
+    @ResponseBody
+	@PostMapping("/checklogin")
+	public Map<String, String> isLogin(
+			@RequestParam(defaultValue = "no") String saveid,/*널값이 넘어올경우 디폴트값이 적용된다*/
+			@RequestParam String email,
+			@RequestParam String password,
+			HttpSession session)
+	{
+		System.out.println("saveid="+saveid);
+		Map<String, String> map=new HashMap<>();
+		//로그인 상태
+		boolean loginStatus=userService.isLoginCheck(email, password);
+		if(loginStatus) {
+			//아이디와 비번이 맞은경우
+			map.put("status", "success");
+			//로그인 성공시 세션에 저장
+			session.setAttribute("saveid", saveid.equals("no")?"no":"yes");
+			session.setAttribute("loginok", "yes");
+			session.setAttribute("loginid", email);
+		}else {
+			//아이디와 비번이 틀린경우
+			map.put("status", "fail");
+		}
+		return map;
+	}
 	
-	 
-	    
-	    @GetMapping("/profile")
-	    public String showProfile() {
-	        return "layout/profile"; // 
-	    }
-	    
-	    @ResponseBody
-		@GetMapping("/login")
-		public Map<String, String> isLogin(
-				@RequestParam(defaultValue = "no") String saveid,/*널값이 넘어올경우 디폴트값이 적용된다*/
-				@RequestParam String myid,
-				@RequestParam String pass,
-				HttpSession session)
-		{
-			System.out.println("saveid="+saveid);
-			Map<String, String> map=new HashMap<>();
-			//로그인 상태
-			boolean loginStatus=userService.isLoginCheck(myid, pass);
-			if(loginStatus) {
-				//아이디와 비번이 맞은경우
-				map.put("status", "success");
-				//로그인 성공시 세션에 저장
-				session.setAttribute("saveid", saveid.equals("no")?"no":"yes");
-				session.setAttribute("loginok", "yes");
-				session.setAttribute("loginid", myid);
-			}else {
-				//아이디와 비번이 틀린경우
-				map.put("status", "fail");
-			}
-			return map;
-		}
-		
-		//로그아웃시 호출
-		@ResponseBody
-		@GetMapping("/logout")
-		public void memberLogout(HttpSession session) {
-			session.removeAttribute("loginok");
-		}
+	//로그아웃시 호출
+	@ResponseBody
+	@GetMapping("/logout")
+	public void memberLogout(HttpSession session) {
+		session.removeAttribute("loginok");
+	}
 }
