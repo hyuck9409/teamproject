@@ -16,7 +16,7 @@
 <body>
 	<div class="container">
 		<div class="box">
-			<form>
+			<form action="./insert" method="post">
 				<div class="login-inputs">
 					<div class="login-input">
 						<label class="input-label">이메일</label> <input type="text"
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<div class="buttons">
-					<button type="button" class="btn-login btn-primary">회원가입</button>
+					<button type="submit" class="btn-login btn-primary">회원가입</button>
 				</div>
 			</form>
 		</div>

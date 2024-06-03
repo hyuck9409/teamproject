@@ -27,7 +27,9 @@
 	 	</div>
 		<div class="buttons">
 			<button type="submit" class="btn-login btn-primary">로그인</button>
-			<button type="button" class="btn-signup btn-secondary">회원가입</button>
+			<button type="button" class="btn-signup btn-secondary">
+			<a href="${root}/signup">회원가입</a>
+			</button>
 		</div>
  	</form>
  </div>
