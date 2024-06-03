@@ -24,5 +24,8 @@ public interface UserMapperInter {
 			""")
 	public int isLoginCheck(String email,String password);
 
+	@Select("select * from user where email=#{email}")
+	public UserDto getDataByEmail(String email);
+	
 	
 }

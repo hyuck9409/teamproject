@@ -14,9 +14,9 @@
 </head>
 <body>
 <div class="list-header">
- <div class="list-title">어쩌구님의 보드</div>
+ <div class="list-title">${dto.nickname}의 보드</div>
  <div class="list-buttons"> 	
- 	<button class="icon-button-full" onclick="">
+ 	<button id="btnlogout" class="icon-button-full">
  		<img alt="" src="./image/icon-log-out.svg">
  		<span class="icon-button-text">로그아웃</span>
  	</button>
@@ -38,6 +38,20 @@
 	<div class="list-item"></div>
 	<div class="list-item"></div>
 </div>
+<script type="text/javascript">
 
+	// 로그아웃 버튼
+	$("#btnlogout").click(function(){
+		$.ajax({
+			type:"get",
+			dataType:"text",
+			url:`${root}/logout`,
+			success:function(){
+				// 전체 페이지 새로고침
+				location.href="./login"
+			},
+		})
+	});
+</script>
 </body>
 </html>

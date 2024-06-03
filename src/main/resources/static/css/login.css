@@ -11,6 +11,7 @@
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	color: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -31,6 +32,9 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
+}
+a {
+	text-decoration: none;
 }
 table {
 	border-collapse: collapse;

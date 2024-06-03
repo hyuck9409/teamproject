@@ -11,10 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
+<c:set var="root" value="<%=request.getContextPath() %>"></c:set>
 <body>
 <div class="container">
  <div class="box">
- 	<form action="./checklogin" method="post">
+ 	<form id="loginfrm" action="./checklogin" method="post">
 	 	<div class="login-inputs">
 	 		<div class="login-input">
 	 			<label class="input-label">이메일</label>
@@ -27,15 +28,39 @@
 	 	</div>
 		<div class="buttons">
 			<button type="submit" class="btn-login btn-primary">로그인</button>
-			<button type="button" class="btn-signup btn-secondary">
-			<a href="${root}/signup">회원가입</a>
-			</button>
+			<button type="button" class="btn-signup btn-secondary" onclick="">회원가입</button>
 		</div>
  	</form>
  </div>
 </div>
 
 <script type="text/javascript">
+$(function(){
+   	$("#loginfrm").submit(function(e){
+   		// 기존 이벤트 무효화
+   		e.preventDefault();
+   		
+   		// 폼안의 입력값 읽기
+   		let fdata = $(this).serialize();
+   		// alert(fdata);
+   		
+   		$.ajax({
+   			type:"post",
+   			dataType:"json",
+   			url:`${root}/checklogin`,
+   			data:fdata,
+   			success:function(data){
+   				if(data.status == "success"){
+   					// 페이지 새로고침
+   					location.href=`${root}/list?user_id=\${data.user_id}`
+   				} else {
+   					alert("아이디 또는 비밀번호가 맞지 않습니다")
+   				}
+   			}
+   		})
+   	});
+   	
+}); // close function
 
 </script>
 

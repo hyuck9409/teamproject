@@ -33,5 +33,9 @@ public class UserService {
 	{
 		return userInter.isLoginCheck(email, password)==1?true:false;
 	}
+	
+	public UserDto getDataByEmail(String email) {
+		return userInter.getDataByEmail(email);
+	}
 
 }
