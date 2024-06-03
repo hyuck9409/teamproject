@@ -21,4 +21,8 @@ public class accountController {
 	public String signup() {
 		return "layout/signup";
 	}
+	@GetMapping("/profile")
+	public String profile() {
+		return "layout/profile";
+	}
 }
