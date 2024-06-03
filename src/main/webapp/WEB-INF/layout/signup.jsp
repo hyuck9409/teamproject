@@ -30,8 +30,8 @@
 							name="password" class="password base-input" placeholder="Password">
 					</div>
 					<div class="login-input">
-						<label class="input-label">비밀번호 확인</label> <input type="password"
-							name="passwordcheck" class="passwordcheck base-input" placeholder="Password Check">
+						<label class="input-label">비밀번호 확인</label> 
+						<input type="password" class="passwordcheck base-input" placeholder="Password Check">
 					</div>
 					<div class="login-input">
 						<label class="input-label">닉네임</label> <input type="text"

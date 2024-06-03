@@ -13,12 +13,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 public class UserDto {
-	private int num;
+	private int user_id;
 	private String email;
 	private String password;
 	private String nickname;
-	private String board_color;
-	
-	
+	private String birthday;
 
 }

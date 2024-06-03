@@ -9,8 +9,8 @@ import data.dto.UserDto;
 public interface UserMapperInter {
 	
 	@Insert("""
-			insert into memberdb (email, password, birthday, nickname, board_color) values (#{email},#{password},#{passwd},#{birthday})
+			insert into user (email, password, birthday, nickname) values (#{email},#{password},#{birthday},#{birthday})
 			""")
-	public void insertMember(UserDto dto);
+	public void insertUser(UserDto dto);
 
 }
