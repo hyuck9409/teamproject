@@ -18,6 +18,10 @@ public class BoardService {
 		boardInter.insertText(dto);
 	}
 	
+	public void insertPhoto(BoardDto dto){
+		boardInter.insertPhoto(dto);
+	}
+	
 	public List<BoardDto> getBoardsByUserId(int user_id){
 		return boardInter.getBoardsByUserId(user_id);
 	}

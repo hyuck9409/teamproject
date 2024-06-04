@@ -13,14 +13,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
+<c:set var="stpath" value="https://kr.object.ncloudstorage.com/bitcamp-jsh/photocommon"/>
 <body>
 <div class="container">
 	<div class="box">
-		<div class="detail-item scrollbar">
-			<div class="detail-text overflow">${dto.content}</div>
-			<div class="detail-writer">${dto.writer}</div>
-			<div class="detail-createdat">
-				<fmt:formatDate value="${dto.created_at}" pattern="yyyy.MM.dd"/>
+		<div class="detail-item"
+			style="background-image: url('${stpath}/${dto.photo}')">
+			<div class="photocard-background"></div>
+			<div class="photocard-form scrollbar">
+				<div class="detail-text overflow">${dto.content}</div>
+				<div class="detail-writer">${dto.writer}</div>
+				<div class="detail-createdat">
+					<fmt:formatDate value="${dto.created_at}" pattern="yyyy.MM.dd"/>
+				</div>
 			</div>
 		</div>
 		<div class="detail-page">

@@ -13,7 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
-
+<c:set var="stpath" value="https://kr.object.ncloudstorage.com/bitcamp-jsh/photocommon"/>
 
 <div class="list-header">
  <div class="list-title">${userdto.nickname}의 보드</div>
@@ -50,7 +50,8 @@
 <div class="list-container">
 	<c:forEach var="dto" items="${list}">
 		<a href="${root}/detail?user_id=${userdto.user_id}&memo_id=${dto.memo_id}">
-			<div class="list-item" >
+			<div class="list-item ${dto.type=='photocard'? 'photocard' : ''}" 
+			style="background-image: url('${stpath}/${dto.photo}')">
 				<div class="list-item-content">${dto.content}</div>
 				<div class="list-item-writer">${dto.writer}</div>
 			</div>
@@ -60,6 +61,8 @@
 </div>
 <script type="text/javascript">
 	$(function() {
+		
+		
 		// 로그아웃 버튼
 		$("#btnlogout").click(function(){
 			$.ajax({

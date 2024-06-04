@@ -17,11 +17,11 @@
 <c:set var="now" value="<%=new java.util.Date()%>" />
 <div class="container">
 	<div class="box">
-		<form action="./inserttext" method="post">
+		<form action="./insertphoto" method="post" enctype="multipart/form-data">
 			<div class="detail-item photocard">
 				<div class="photocard-background"></div>
 				<div class="photocard-form">
-					<input type="hidden" value="${user_id}"name="user_id">
+					<input type="hidden" value="${user_id}" name="user_id">
 					<div class="detail-text">
 						<textarea rows="" cols="" class="detail-textarea" name="content" required="required"></textarea>
 					</div>
@@ -39,7 +39,7 @@
 			 	<button type="button" class="icon-button-full">
 			 		<img alt="" src="./image/icon-image.svg">
 			 		<label class="icon-button-text" for="myfile">사진 추가</label>
-					<input type="file" name="myfile" id="myfile" class="form-control"
+					<input type="file" name="upload" id="myfile" class="form-control"
 						required="required" style="display:none">
 			 	</button>
 			 	<button type="submit" class="icon-button-full">

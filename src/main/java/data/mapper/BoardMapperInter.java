@@ -16,6 +16,12 @@ public interface BoardMapperInter {
 			insert into memo (user_id, writer, content, created_at) values (#{user_id},#{writer},#{content},now())
 			""")
 	public void insertText(BoardDto dto);
+	
+	@Insert("""
+			insert into memo (user_id, writer, content, type, photo, created_at) 
+			values (#{user_id},#{writer},#{content},'photocard',#{photo},now())
+			""")
+	public void insertPhoto(BoardDto dto);
 
 	@Select("select * from memo where user_id=#{user_id}")
 	public List<BoardDto> getBoardsByUserId(int user_id);
