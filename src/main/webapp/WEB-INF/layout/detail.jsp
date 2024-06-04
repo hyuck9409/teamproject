@@ -17,9 +17,9 @@
 <div class="container">
 	<div class="box">
 		<div class="detail-item scrollbar">
-			<div class="detail-text overflow"></div>
-			<div class="detail-writer">NICKNAME</div>
-			<div class="detail-createdat">2024.06.03</div>
+			<div class="detail-text overflow">${dto.memo_id }</div>
+			<div class="detail-writer">${dto.nickname }</div>
+			<div class="detail-createdat">${dto.created_at }</div>
 		</div>
 		<div class="detail-page">
 		 	<button class="page-button">

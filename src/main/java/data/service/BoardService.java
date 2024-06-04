@@ -21,4 +21,8 @@ public class BoardService {
 	public List<BoardDto> getBoardsByUserId(int user_id){
 		return boardInter.getBoardsByUserId(user_id);
 	}
+	
+	 public BoardDto getBoardByMemoId(int memo_id) {
+	        return boardInter.getBoardByMemoId(memo_id);
+	    }
 }

@@ -22,4 +22,7 @@ public interface BoardMapperInter {
 	
 	@Select("select * from memo where memo_id=#{memo_id}")
 	public BoardDto getBoardByMemoId(int memo_id);
+	
+	
+	
 }
