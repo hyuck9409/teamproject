@@ -101,10 +101,33 @@
 	height: 400px;
 	background: var(--color-red-400, #F87171);
 	margin-bottom: 40px;
-	padding: 30px 26px;
 	box-sizing: border-box;
+	position: relative;
 }
 
+.detail-item.photocard{
+	background-image: url('../image/noimage3.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.photocard-background{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:0;
+	width: 400px;
+	height: 400px;
+	background-color: rgba(0,0,0,0.4);
+}
+.photocard-form{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:1;
+	width: 348px;
+	height: 400px;
+	padding: 30px 26px;
+}
 .detail-text {
 	height: 300px;
 	color: #FFF;
@@ -113,6 +136,7 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: 26px; /* 130% */
+	
 }
 
 .transparent-input {
