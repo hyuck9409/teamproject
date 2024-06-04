@@ -29,14 +29,12 @@ public class BoardController {
 	private UserService userService;
 	
 	@GetMapping("/list")
-	public String boardlist(@RequestParam int user_id, Model model, HttpSession session) {
-		String loginok = (String)session.getAttribute("loginok");
+	public String boardlist(@RequestParam int user_id, Model model) {
 		List<BoardDto> list = boardService.getBoardsById(user_id);
 		UserDto userdto = userService.getDataById(user_id);
 		
 		model.addAttribute("list",list);
 		model.addAttribute("userdto",userdto);
-		model.addAttribute("loginok",loginok);
 		
 		return "layout/boardlist";
 	}

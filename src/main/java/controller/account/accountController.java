@@ -68,6 +68,8 @@ public class accountController {
 		//로그인 상태
 		boolean loginStatus=userService.isLoginCheck(email, password);
 		int user_id=userService.getDataByEmail(email).getUser_id();
+		String nickname=userService.getDataByEmail(email).getNickname();
+		
 		if(loginStatus) {
 			//아이디와 비번이 맞은경우
 			map.put("status", "success");
@@ -77,6 +79,7 @@ public class accountController {
 			session.setAttribute("saveid", saveid.equals("no")?"no":"yes");
 			session.setAttribute("loginok", "yes");
 			session.setAttribute("loginid", email);
+			session.setAttribute("nickname", nickname);
 		}else {
 			//아이디와 비번이 틀린경우
 			map.put("status", "fail");

@@ -16,12 +16,14 @@
 
 
 <div class="list-header">
- <div class="list-title">${userdto.nickname}의 보드 ${loginok}</div>
- <div class="list-buttons"> 	
- 	<button id="btnlogout" class="icon-button-full">
+ <div class="list-title">${userdto.nickname}의 보드</div>
+ <div class="list-buttons">
+ <c:if test="${sessionScope.loginok != null}">
+	 <button id="btnlogout" class="icon-button-full">
  		<img alt="" src="./image/icon-log-out.svg">
  		<span class="icon-button-text">로그아웃</span>
  	</button>
+ </c:if>
  	<button class="icon-button"
  		onclick="location.href='${root}/writephoto?user_id=${userdto.user_id}'">
  		<img alt="" src="./image/icon-image.svg">
@@ -47,7 +49,6 @@
 </div>
 <script type="text/javascript">
 	$(function() {
-		
 		// 로그아웃 버튼
 		$("#btnlogout").click(function(){
 			$.ajax({
