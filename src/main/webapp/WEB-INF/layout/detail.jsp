@@ -17,9 +17,11 @@
 <div class="container">
 	<div class="box">
 		<div class="detail-item scrollbar">
-			<div class="detail-text overflow">${dto.memo_id }</div>
-			<div class="detail-writer">${dto.nickname }</div>
-			<div class="detail-createdat">${dto.created_at }</div>
+			<div class="detail-text overflow">${dto.content}</div>
+			<div class="detail-writer">${dto.writer }</div>
+			<div class="detail-createdat">
+				<fmt:formatDate value="${dto.created_at}" pattern="yyyy.MM.dd"/>
+			</div>
 		</div>
 		<div class="detail-page">
 		 	<button class="page-button">

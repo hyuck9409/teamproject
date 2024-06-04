@@ -93,4 +93,26 @@ public class accountController {
 	public void memberLogout(HttpSession session) {
 		session.removeAttribute("loginok");
 	}
+	
+	@ResponseBody  //json 으로 반환
+	@GetMapping("/idcheck")
+	public Map<String, Integer> getIdCheck(
+			@RequestParam String searchid)
+	{
+		Map<String, Integer> map=new HashMap<>();
+		int count=userService.getIdCheckCount(searchid);
+		map.put("count", count);
+		return map;
+	}
+	
+	@ResponseBody  //json 으로 반환
+	@GetMapping("/nickcheck")
+	public Map<String, Integer> getNickCheck(
+			@RequestParam String searchnick)
+	{
+		Map<String, Integer> map=new HashMap<>();
+		int count=userService.getNickCheckCount(searchnick);
+		map.put("count", count);
+		return map;
+	}
 }
