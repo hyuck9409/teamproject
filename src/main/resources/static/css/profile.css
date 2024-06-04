@@ -97,3 +97,14 @@ td {
   padding: 0.6em 1em;
   word-break: break-all;
 }
+
+.logotitle{
+	color: var(--color-slate-50, #FA4EAB);
+font-feature-settings: 'cv01' on, 'cv11' on, 'cv12' on, 'cv13' on;
+font-family: "Noto Sans KR";
+font-size: var(--font-size-text-base, 24px);
+font-style: normal;
+font-weight: 900;
+line-height: var(--line-height-text-base, 24px); /* 150% */
+
+}

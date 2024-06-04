@@ -22,7 +22,9 @@
 	<div class="profile-info">
 		<div class="profile-header">
 			<div class="logo">
+			
 			</div>
+			<div class="logotitle"><h1>내 생일을 축하해줘!</h1></div>
 		</div>
 		<div class="profile-content">
 			<h2 class="profile-title">${userdto.nickname}님의 프로필</h2>
