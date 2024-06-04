@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/profile.css">
 <link
@@ -23,13 +24,19 @@
 <style>
 body * {
 	font-family: "Noto Sans KR", sans-serif;
+	
 }
 </style>
 </head>
 <body>
-<h2>${userdto.nickname} 님의 프로필</h2>
 
-	<table class="table table-bordered" style="width: 800px;">
+<h2>${userdto.nickname} 님의 프로필</h2>
+<pre>
+이메일 : ${userdto.email}
+생년월일 : ${userdto.birthday }
+상태메세지 : <input type="text">
+</pre>
+	<table class="table table-bordered">
 		<tr>
 			<th>번호</th>
 			<th>작성자</th>
