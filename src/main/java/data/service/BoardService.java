@@ -22,7 +22,7 @@ public class BoardService {
 		return boardInter.getBoardsByUserId(user_id);
 	}
 	
-	 public BoardDto getBoardByMemoId(int memo_id) {
-	        return boardInter.getBoardByMemoId(memo_id);
-	    }
+	public BoardDto getBoardByMemoId(int memo_id) {
+        return boardInter.getBoardByMemoId(memo_id);
+    }
 }

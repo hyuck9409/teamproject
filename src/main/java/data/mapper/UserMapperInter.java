@@ -32,8 +32,11 @@ public interface UserMapperInter {
 	@Select("select * from user where user_id=#{user_id}")
 	public UserDto getDataById(int user_id);
 	
+	@Select("select count(*) from user where email=#{searchid}")
+	public int getIdCheckCount(String searchid);
 	
-
+	@Select("select count(*) from user where nickname=#{searchnick}")
+	public int getNickCheckCount(String searchnick);
 	
 	
 }

@@ -49,6 +49,9 @@ public class BoardController {
 		
 		model.addAttribute("user_id",user_id);
 		
+		BoardDto boardDto = boardService.getBoardByMemoId(memo_id);
+        model.addAttribute("dto", boardDto);
+        
 		return "layout/detail";
 	}
 	
@@ -73,11 +76,6 @@ public class BoardController {
 		return "redirect:./list?user_id="+user_id;
 	}
 	
-	@GetMapping("/getBoardByMemoId")
-    public String getBoardByMemoId(@RequestParam int memo_id, Model model) {
-        BoardDto boardDto = boardService.getBoardByMemoId(memo_id);
-        model.addAttribute("board", boardDto);
-        return "layout/detail";  // 여기서 layout/detail은 JSP 또는 Thymeleaf 파일의 경로입니다
-    }
+	
 	
 }
