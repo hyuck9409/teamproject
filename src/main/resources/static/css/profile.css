@@ -10,7 +10,13 @@
 	padding: 48px 64px;
 	box-sizing: border-box;
 }
-
+.profile-header{
+	display: flex;
+	align-items: center;
+}
+.logo {
+	margin-right: 12px;
+}
 .profile-content {
 	display: flex;
 	justify-content: space-between;

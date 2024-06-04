@@ -16,6 +16,9 @@
 <body>
 <div class="container">
  <div class="box">
+	<div class="logo">
+		<img alt="" src="${root}/image/logo.png" height="100">
+	</div>
  	<form id="loginfrm" action="./checklogin" method="post">
 	 	<div class="login-inputs">
 	 		<div class="login-input">

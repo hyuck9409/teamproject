@@ -22,9 +22,9 @@
 	<div class="profile-info">
 		<div class="profile-header">
 			<div class="logo">
-			
+				<img alt="" src="${root}/image/logo.png" height="50">
 			</div>
-			<div class="logotitle"><h1>내 생일을 축하해줘!</h1></div>
+			<div class="logotitle">내 생일을 축하해줘!</div>
 		</div>
 		<div class="profile-content">
 			<h2 class="profile-title">${userdto.nickname}님의 프로필</h2>
