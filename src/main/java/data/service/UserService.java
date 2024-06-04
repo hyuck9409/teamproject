@@ -44,6 +44,14 @@ public class UserService {
 		return userInter.getDataById(user_id);
 	}
 	
-
+	public int getIdCheckCount(String searchid)
+	{
+		return userInter.getIdCheckCount(searchid);
+	}
+	
+	public int getNickCheckCount(String searchnick)
+	{
+		return userInter.getNickCheckCount(searchnick);
+	}
 
 }
