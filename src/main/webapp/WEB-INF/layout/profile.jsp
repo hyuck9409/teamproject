@@ -57,12 +57,12 @@
 		</thead>
 		<tbody>
 			<c:forEach var="dto" items="${list}">
-				<tr onclick="location.href=''">
+				<tr>
 					<td>${dto.memo_id}</td>
 					<td>${dto.writer}</td>
-					<td>${dto.content}</td>
+					<td onclick="location.href='${root}/detail?user_id=${userdto.user_id}&memo_id=${dto.memo_id}'">${dto.content}</td>
 					<td>${dto.created_at}</td>
-					<td></td>
+					<td>${dto.is_hidden==1? '숨김':'안숨김'}</td>
 					<td>
 					 <button id="hideButton" class="icon-button-full"
 					 	onclick="location.href='./login'">

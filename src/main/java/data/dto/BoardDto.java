@@ -26,7 +26,7 @@ public class BoardDto {
 	private String photo;
 	private String content;
 	private Timestamp created_at;
-	private boolean is_hidden;
+	private int is_hidden;
 	private int pos_x;
 	private int pos_y;
 	private String font_family;
