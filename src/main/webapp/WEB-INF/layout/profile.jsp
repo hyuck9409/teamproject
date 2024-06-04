@@ -11,32 +11,27 @@
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/profile.css">
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-<link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
 	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<style>
-body * {
-	font-family: "Noto Sans KR", sans-serif;
-	
-}
-</style>
 </head>
 <body>
 
-<h2>${userdto.nickname} 님의 프로필</h2>
-<pre>
-이메일 : ${userdto.email}
-생년월일 : ${userdto.birthday }
-상태메세지 : <input type="text">
-</pre>
-	<table class="table table-bordered">
+<div class="profile-info">
+	<div class="profile-header">
+		<div class="logo">
+			<img alt="" src="./image/icon-user.svg">
+		</div>
+	</div>
+	<div class="profile-content">
+		<h2 class="profile-title">${userdto.nickname}님의 프로필</h2>
+		<div class="profile-detail">
+			이메일 : ${userdto.email}
+			생년월일 : ${userdto.birthday }
+		</div>
+	</div>
+</div>
+	<table>
 		<tr>
 			<th>번호</th>
 			<th>작성자</th>

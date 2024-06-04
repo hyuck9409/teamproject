@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/board.css">
 <link rel="stylesheet" href="./css/scroll.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 	<div class="box">
 		<div class="detail-item scrollbar">
 			<div class="detail-text overflow">${dto.memo_id }</div>
-			<div class="detail-writer">${dto.nickname }</div>
+			<div class="detail-writer">${dto.writer }</div>
 			<div class="detail-createdat">${dto.created_at }</div>
 		</div>
 		<div class="detail-page">

@@ -1,1 +1,24 @@
 @charset "UTF-8";
+.profile-info {
+	width: 1446px;
+	margin:	80px auto;
+	border-top: 4px solid var(--color-accent-foreground, #fff);
+	padding: 48px 64px;
+	box-sizing: border-box;
+}
+
+.profile-content {
+	display: flex;
+	justify-content: space-between;	
+}
+
+.profile-title{
+	color: var(--color-slate-50, #F8FAFC);
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-6xl, 60px);
+	font-style: normal;
+	font-weight: 900;
+	line-height: var(--line-height-text-6xl, 60px); /* 100% */
+	letter-spacing: var(--letter-spacing-tracking-tight, -0.4px);
+}
+

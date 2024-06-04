@@ -41,7 +41,7 @@
  	</button>
  	<button class="icon-button"
  		onclick="location.href='${root}/profile?user_id=${userdto.user_id}'">
- 		<img alt="" src="./image/icon-menu.svg">
+ 		<img alt="" src="./image/icon-user.svg">
  	</button>
  </div>
 </div>
