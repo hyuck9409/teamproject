@@ -14,8 +14,9 @@
 	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script type="text/javascript">   
-        let jungbok=false;
-        $(function(){
+     let idCheck=false;
+     let nicknameCheck=false;
+     $(function(){
        //중복버튼 이벤트
        $("#btncheckid").click(function(){
     	  if($("#emailid").val()==''){
@@ -31,10 +32,10 @@
     		 success:function(data){
     			 if(data.count==0){
     				 alert("가입 가능한 이메일입니다");
-    				 jungbok=true;
+    				 idCheck=true;
     			 }else{
     				 alert("이미 가입되어있는 이메일입니다");
-    				 jungbok=false;
+    				 idCheck=false;
     				 $("#emailid").val("");
     			 }
     		 }
@@ -55,10 +56,10 @@
      		 success:function(data){
      			 if(data.count==0){
      				 alert("가입 가능한 닉네임입니다");
-     				 jungbok=true;
+     				nicknameCheck=true;
      			 }else{
      				 alert("이미 가입되어있는 닉네임입니다");
-     				 jungbok=false;
+     				nicknameCheck=false;
      				 $("#nicknameid").val("");
      			 }
      		 }
@@ -67,31 +68,39 @@
        
        //아이디를 입력시 다시 중복확인을 누르도록 중복변수를 초기화
        $("#nicknameid").keyup(function(){
-    	   jungbok=false;
+    	   nicknameCheck=false;
        });
    });  //close function 
  
    
    function check()
    {
-	   if(!jungbok){
+	   if(!idCheck){
 		   alert("아이디 중복확인을 해주세요");
-		   return false;//false반환시 action 실행을 안함
-	   }	   
+		   return false;
+	   } else if (!nicknameCheck) {
+		   alert("닉네임 중복확인을 해주세요");
+		   return false;
+	   } else {
+		   return true;
+	   }
    }
    </script>
 </head>
 <body>
 	<div class="container">
 		<div class="box">
-			<form action="./insert" method="post">
+			<form action="./insert" method="post" onsubmit="return check()">
 				<div class="login-inputs">
 					<div class="login-input">
-						<label class="input-label">이메일</label> <input type="text"
-							name="email" id="emailid" class="email base-input" placeholder="Email" required="required">
-					</div>
-					<div class="buttons">
-						<button type="button" class="btn-signup btn-secondary" id="btncheckid">중복확인</button>
+						<label class="input-label">이메일</label>
+						<div class="button-input">
+							<input type="text" name="email" id="emailid"
+								class="email base-input" placeholder="Email" required="required">
+							<div class="buttons">
+								<button type="button" class="btn-signup btn-secondary" id="btncheckid">중복확인</button>
+							</div>
+						</div>
 					</div>
 					<div class="login-input">
 						<label class="input-label">비밀번호</label> <input type="password"
@@ -102,12 +111,14 @@
 						<input type="password" class="passwordcheck base-input" placeholder="Password Check" required="required">
 					</div>
 					<div class="login-input">
-						<label class="input-label">닉네임</label> 
-						<input type="text"
-							name="nickname" id="nicknameid" class="nickname base-input" placeholder="Nickname" required="required">
-					</div>
-					<div class="buttons">
-						<button type="button" class="btn-signup btn-secondary" id="btnchecknick">중복확인</button>
+						<label class="input-label">닉네임</label>
+						<div class="button-input">
+							<input type="text"
+								name="nickname" id="nicknameid" class="nickname base-input" placeholder="Nickname" required="required">
+							<div class="buttons">
+								<button type="button" class="btn-signup btn-secondary" id="btnchecknick">중복확인</button>
+							</div>
+						</div>
 					</div>
 					<div class="login-input">
 						<label class="input-label">생년월일</label> 
