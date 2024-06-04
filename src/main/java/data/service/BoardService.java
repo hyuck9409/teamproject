@@ -18,10 +18,6 @@ public class BoardService {
 		boardInter.insertText(dto);
 	}
 	
-	public UserDto getData(int user_id) {
-		return boardInter.getData(user_id);
-	}
-	
 	public List<BoardDto> getBoardsById(int user_id){
 		return boardInter.getBoardsById(user_id);
 	}

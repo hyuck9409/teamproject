@@ -28,7 +28,8 @@
 	 	</div>
 		<div class="buttons">
 			<button type="submit" class="btn-login btn-primary">로그인</button>
-			<button type="button" class="btn-signup btn-secondary" onclick="">회원가입</button>
+			<button type="button" class="btn-signup btn-secondary" 
+			onclick="location.href='${root}/signup'">회원가입</button>
 		</div>
  	</form>
  </div>
@@ -37,12 +38,8 @@
 <script type="text/javascript">
 $(function(){
    	$("#loginfrm").submit(function(e){
-   		// 기존 이벤트 무효화
    		e.preventDefault();
-   		
-   		// 폼안의 입력값 읽기
    		let fdata = $(this).serialize();
-   		// alert(fdata);
    		
    		$.ajax({
    			type:"post",
@@ -51,7 +48,6 @@ $(function(){
    			data:fdata,
    			success:function(data){
    				if(data.status == "success"){
-   					// 페이지 새로고침
    					location.href=`${root}/list?user_id=\${data.user_id}`
    				} else {
    					alert("아이디 또는 비밀번호가 맞지 않습니다")

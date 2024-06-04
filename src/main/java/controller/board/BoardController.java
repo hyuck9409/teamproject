@@ -1,5 +1,10 @@
 package controller.board;
 
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import data.dto.BoardDto;
 import data.dto.UserDto;
 import data.service.BoardService;
+import data.service.UserService;
 
 @Controller
 public class BoardController {
@@ -19,16 +25,27 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private UserService userService;
+	
 	@GetMapping("/list")
-	public String boardlist(@RequestParam int user_id, Model model) {
-		UserDto dto = boardService.getData(user_id);
-		model.addAttribute("dto",dto); // 사실 이것도 생략가능
+	public String boardlist(@RequestParam int user_id, Model model, HttpSession session) {
+		String loginok = (String)session.getAttribute("loginok");
+		List<BoardDto> list = boardService.getBoardsById(user_id);
+		UserDto userdto = userService.getDataById(user_id);
+		
+		model.addAttribute("list",list);
+		model.addAttribute("userdto",userdto);
+		model.addAttribute("loginok",loginok);
+		
 		return "layout/boardlist";
 	}
+	
 	@GetMapping("/detail")
 	public String detail() {
 		return "layout/detail";
 	}
+	
 	@GetMapping("/writetext")
 	public String writetext(
 			@RequestParam int user_id, 
@@ -36,6 +53,7 @@ public class BoardController {
 		model.addAttribute("user_id",user_id);
 		return "layout/writetext";
 	}
+	
 	@GetMapping("/writephoto")
 	public String writephoto() {
 		return "layout/writephoto";

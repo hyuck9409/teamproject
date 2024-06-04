@@ -18,8 +18,5 @@ public interface BoardMapperInter {
 	public void insertText(BoardDto dto);
 
 	@Select("select * from memo where user_id=#{user_id}")
-	public UserDto getData(int user_id);
-	
-	@Select("select * from memo where user_id=#{user_id}")
 	public List<BoardDto> getBoardsById(int user_id);
 }
