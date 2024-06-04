@@ -18,5 +18,6 @@ public class UserDto {
 	private String password;
 	private String nickname;
 	private String birthday;
+	private String board_color;
 
 }

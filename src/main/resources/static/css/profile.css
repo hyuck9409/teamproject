@@ -1,7 +1,11 @@
 @charset "UTF-8";
-.profile-info {
+
+.profile-container{
 	width: 1446px;
 	margin:	80px auto;
+}
+
+.profile-info {
 	border-top: 4px solid var(--color-accent-foreground, #fff);
 	padding: 48px 64px;
 	box-sizing: border-box;
@@ -9,7 +13,7 @@
 
 .profile-content {
 	display: flex;
-	justify-content: space-between;	
+	justify-content: space-between;
 }
 
 .profile-title{
@@ -22,3 +26,74 @@
 	letter-spacing: var(--letter-spacing-tracking-tight, -0.4px);
 }
 
+.profile-detail{
+	padding-top: 24px;
+	
+}
+.profile-item{
+	display: flex;
+	padding: 6px 12px;
+	border-radius: 2px;
+	border-bottom: var(--spacing-px, 1px) solid var(--color-border, #E4E4E7);
+}
+.profile-item-title{
+	width: 80px;
+	margin-right: 24px;
+	color: var(--color-slate-50, #F8FAFC);
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-xs, 12px);
+	font-style: normal;
+	font-weight: 900;
+	line-height: var(--line-height-text-xs, 16px); /* 133.333% */
+	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
+}
+
+.profile-item-content{
+	color: var(--color-muted-foreground, #71717A);
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-xs, 12px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: var(--line-height-text-xs, 16px); /* 133.333% */
+	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
+}
+
+.btn-hide{
+	padding: 10px;
+}
+
+
+/* https://codepen.io/hello-ajayrawat/pen/KXGBWz */
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  overflow: hidden;
+  color: #F8FAFC;
+}
+table tbody,
+table thead {
+  padding: 0 1em;
+}
+table tr:not(:last-child) {
+  border-bottom: 1px solid #464c59;
+}
+tbody tr:hover {
+	cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+tr {
+  border-bottom: 1px solid #464c59;
+}
+th {
+	background-color: rgba(255,255,255,0.3);
+  	padding: 4em 1em 1em;
+}
+th,
+td {
+  padding: 0.6em 1em;
+  word-break: break-all;
+}

@@ -39,10 +39,12 @@
  		onclick="location.href='${root}/writetext?user_id=${userdto.user_id}'">
  		<img alt="" src="./image/icon-pen-square.svg">
  	</button>
- 	<button class="icon-button"
- 		onclick="location.href='${root}/profile?user_id=${userdto.user_id}'">
- 		<img alt="" src="./image/icon-user.svg">
- 	</button>
+ 	 <c:if test="${sessionScope.loginok != null}">
+	 	<button class="icon-button"
+	 		onclick="location.href='${root}/profile?user_id=${userdto.user_id}'">
+	 		<img alt="" src="./image/icon-user.svg">
+	 	</button>
+	 </c:if>
  </div>
 </div>
 <div class="list-container">

@@ -18,7 +18,7 @@
 	<div class="box">
 		<div class="detail-item scrollbar">
 			<div class="detail-text overflow">${dto.content}</div>
-			<div class="detail-writer">${dto.writer }</div>
+			<div class="detail-writer">${dto.writer}</div>
 			<div class="detail-createdat">
 				<fmt:formatDate value="${dto.created_at}" pattern="yyyy.MM.dd"/>
 			</div>

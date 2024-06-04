@@ -61,3 +61,32 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+.btn-primary{
+	border-radius: var(--border-radius-rounded-md, 6px);
+	background: #FA4EAB;
+	color: var(--color-primary-foreground, #FFF);
+	text-align: center;
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-sm, 14px);
+	font-style: normal;
+	font-weight: 500;
+	line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
+}
+
+.btn-secondary{
+	border-radius: var(--border-radius-rounded-md, 6px);
+	border: 1px solid #FA4EAB;
+	background-color: transparent;
+
+	color: #FA4EAB;
+	text-align: center;
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-sm, 14px);
+	font-style: normal;
+	font-weight: 500;
+	line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
+	
+}
