@@ -18,7 +18,7 @@ public class BoardService {
 		boardInter.insertText(dto);
 	}
 	
-	public List<BoardDto> getBoardsById(int user_id){
-		return boardInter.getBoardsById(user_id);
+	public List<BoardDto> getBoardsByUserId(int user_id){
+		return boardInter.getBoardsByUserId(user_id);
 	}
 }

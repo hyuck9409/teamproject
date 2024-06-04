@@ -40,10 +40,12 @@
 </div>
 <div class="list-container">
 	<c:forEach var="dto" items="${list}">
-		<div class="list-item">
-			<div class="list-item-content">${dto.content}</div>
-			<div class="list-item-writer">${dto.writer}</div>
-		</div>
+		<a href="${root}/detail?user_id=${userdto.user_id}&memo_id=${dto.memo_id}">
+			<div class="list-item" >
+				<div class="list-item-content">${dto.content}</div>
+				<div class="list-item-writer">${dto.writer}</div>
+			</div>
+		</a>
 	</c:forEach>
 	
 </div>

@@ -30,7 +30,7 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public String boardlist(@RequestParam int user_id, Model model) {
-		List<BoardDto> list = boardService.getBoardsById(user_id);
+		List<BoardDto> list = boardService.getBoardsByUserId(user_id);
 		UserDto userdto = userService.getDataById(user_id);
 		
 		model.addAttribute("list",list);
@@ -40,7 +40,15 @@ public class BoardController {
 	}
 	
 	@GetMapping("/detail")
-	public String detail() {
+	public String detail(
+			@RequestParam int user_id,
+			@RequestParam int memo_id,
+			Model model
+			) {
+		List<BoardDto> list = boardService.getBoardsByUserId(user_id);
+		
+		model.addAttribute("user_id",user_id);
+		
 		return "layout/detail";
 	}
 	

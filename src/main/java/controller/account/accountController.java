@@ -47,7 +47,7 @@ public class accountController {
     		@RequestParam int user_id,
     		Model model
     		) {	
-    	List<BoardDto> list = boardService.getBoardsById(user_id);
+    	List<BoardDto> list = boardService.getBoardsByUserId(user_id);
     	UserDto userdto = userService.getDataById(user_id);
     	
     	model.addAttribute("userdto",userdto);
