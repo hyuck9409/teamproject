@@ -1,5 +1,7 @@
 package data.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -11,11 +13,13 @@ import data.dto.UserDto;
 public interface BoardMapperInter {
 	
 	@Insert("""
-			insert into memo (writer, content, created_at) values (#{writer},#{content},now())
+			insert into memo (user_id, writer, content, created_at) values (#{user_id},#{writer},#{content},now())
 			""")
 	public void insertText(BoardDto dto);
 
 	@Select("select * from memo where user_id=#{user_id}")
 	public UserDto getData(int user_id);
 	
+	@Select("select * from memo where user_id=#{user_id}")
+	public List<BoardDto> getBoardsById(int user_id);
 }

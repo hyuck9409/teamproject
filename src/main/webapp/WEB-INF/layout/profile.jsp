@@ -26,7 +26,8 @@ body * {
 </style>
 </head>
 <body>
-<h2>${dto.nickname } 님의 프로필</h2>
+<h2>${userdto.nickname} 님의 프로필</h2>
+
 	<table class="table table-bordered" style="width: 800px;">
 		<tr>
 			<th>번호</th>
@@ -36,15 +37,16 @@ body * {
 			<th>숨김여부</th>
 			<th>숨김 버튼</th>
 		</tr>
-		<tr>
-	<td>${dto.memo_id}</td>
-	<td>${dto.writer}</td>
-	<td>${dto.content}</td>
-	<td>${dto.created_at}</td>
-	<td></td>
-	<td><button type="button" id="hideButton" class="btn-signup btn-secondary">숨김</button></td>
-	</tr>
-	
+		<c:forEach var="dto" items="${list}">
+			<tr>
+				<td>${dto.memo_id}</td>
+				<td>${dto.writer}</td>
+				<td>${dto.content}</td>
+				<td>${dto.created_at}</td>
+				<td></td>
+				<td><button type="button" id="hideButton" class="btn-signup btn-secondary">숨김</button></td>
+			</tr>
+		</c:forEach>
 	</table>
 	<script>
 	document.getElementById('hideButton').addEventListener('click', function() {

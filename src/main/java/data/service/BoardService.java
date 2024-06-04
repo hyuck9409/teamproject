@@ -1,5 +1,7 @@
 package data.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import data.mapper.BoardMapperInter;
 @Service
 public class BoardService {
 	@Autowired
-	private BoardMapperInter boardInter; 
+	private BoardMapperInter boardInter;
 	
 	public void insertText(BoardDto dto){
 		boardInter.insertText(dto);
@@ -18,5 +20,9 @@ public class BoardService {
 	
 	public UserDto getData(int user_id) {
 		return boardInter.getData(user_id);
+	}
+	
+	public List<BoardDto> getBoardsById(int user_id){
+		return boardInter.getBoardsById(user_id);
 	}
 }

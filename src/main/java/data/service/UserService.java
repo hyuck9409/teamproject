@@ -1,11 +1,13 @@
 package data.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import data.dto.BoardDto;
 import data.dto.UserDto;
 import data.mapper.UserMapperInter;
 
@@ -37,5 +39,11 @@ public class UserService {
 	public UserDto getDataByEmail(String email) {
 		return userInter.getDataByEmail(email);
 	}
+	
+	public UserDto getDataById(int user_id) {
+		return userInter.getDataById(user_id);
+	}
+	
+
 
 }

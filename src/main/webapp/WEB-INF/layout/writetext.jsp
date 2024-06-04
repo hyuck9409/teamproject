@@ -18,8 +18,9 @@
 	<div class="box">
 		<form action="./inserttext" method="post">
 			<div class="detail-item">
+				<input type="hidden" value="${user_id}"name="user_id">
 				<div class="detail-text">
-					<textarea rows="" cols="" class="detail-textarea"></textarea>
+					<textarea rows="" cols="" class="detail-textarea" name="content"></textarea>
 				</div>
 				<div class="detail-writer">
 					<input type="text" name="writer" class="writer transparent-input" placeholder="Nickname">

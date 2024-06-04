@@ -34,12 +34,14 @@
 						<input type="password" class="passwordcheck base-input" placeholder="Password Check">
 					</div>
 					<div class="login-input">
-						<label class="input-label">닉네임</label> <input type="text"
+						<label class="input-label">닉네임</label> 
+						<input type="text"
 							name="nickname" class="nickname base-input" placeholder="Nickname">
 					</div>
 					<div class="login-input">
-						<label class="input-label">생년월일</label> <input type="date"
-							name="birthday" class="birth base-input" placeholder="Nickname">
+						<label class="input-label">생년월일</label> 
+						<input type="date"
+							name="birthday" class="birth base-input">
 					</div>
 					<div class="buttons">
 						<button type="button" class="btn-signup btn-secondary">중복확인</button>

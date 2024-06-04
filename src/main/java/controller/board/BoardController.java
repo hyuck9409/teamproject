@@ -1,5 +1,6 @@
 package controller.board;
 
+import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,10 @@ public class BoardController {
 		return "layout/detail";
 	}
 	@GetMapping("/writetext")
-	public String writetext() {
+	public String writetext(
+			@RequestParam int user_id, 
+			Model model) {
+		model.addAttribute("user_id",user_id);
 		return "layout/writetext";
 	}
 	@GetMapping("/writephoto")
@@ -38,9 +42,11 @@ public class BoardController {
 	}
 	
 	@PostMapping("/inserttext")
-	public String insertText(@ModelAttribute BoardDto dto) {
+	public String insertText(
+			@RequestParam int user_id,
+			@ModelAttribute BoardDto dto) {
 		boardService.insertText(dto);
-		return "redirect:./list";
+		return "redirect:./list?user_id="+user_id;
 	}
 	
 	

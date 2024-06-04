@@ -1,18 +1,20 @@
 package data.mapper;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import data.dto.BoardDto;
 import data.dto.UserDto;
 
 @Mapper
 public interface UserMapperInter {
 	
 	@Insert("""
-			insert into user (email, password, birthday, nickname) values (#{email},#{password},#{birthday},#{birthday})
+			insert into user (email, password, birthday, nickname) values (#{email},#{password},#{birthday},#{nickname})
 			""")
 	public void insertUser(UserDto dto);
 	
@@ -26,6 +28,12 @@ public interface UserMapperInter {
 
 	@Select("select * from user where email=#{email}")
 	public UserDto getDataByEmail(String email);
+	
+	@Select("select * from user where user_id=#{user_id}")
+	public UserDto getDataById(int user_id);
+	
+	
+
 	
 	
 }
