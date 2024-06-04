@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/board.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
@@ -22,6 +22,13 @@
 	 <button id="btnlogout" class="icon-button-full">
  		<img alt="" src="./image/icon-log-out.svg">
  		<span class="icon-button-text">로그아웃</span>
+ 	</button>
+ </c:if>
+ <c:if test="${sessionScope.loginok == null}">
+	 <button id="btnlogin" class="icon-button-full"
+	 	onclick="location.href='./login'">
+ 		<img alt="" src="./image/icon-log-in.svg">
+ 		<span class="icon-button-text">로그인</span>
  	</button>
  </c:if>
  	<button class="icon-button"
