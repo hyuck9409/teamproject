@@ -61,7 +61,6 @@
 		 		<img alt="" src="./image/icon-pen-square.svg">
 		 	</button>
 		 	 <c:if test="${sessionScope.loginok != null}">
-		 
 			 	<button class="icon-button btn-hide" num="${dto.memo_id}" ishidden="${dto.is_hidden}">
 		 		 	<c:if test="${dto.is_hidden == 0}">
 				 		<img alt="" src="./image/icon-eye-off.svg">
