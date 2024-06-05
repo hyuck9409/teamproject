@@ -64,9 +64,15 @@
 					<td>${dto.created_at}</td>
 					<td>${dto.is_hidden==1? '숨김':'안숨김'}</td>
 					<td>
-					 <button class="icon-button-full btn-hide" num="${dto.memo_id}">
-				 		<img alt="" src="./image/icon-eye-off.svg">
-				 		<span class="icon-button-text" style="color: black;">글숨기기</span>
+					 <button class="icon-button-full btn-hide" num="${dto.memo_id}" ishidden="${dto.is_hidden}">
+					 	<c:if test="${dto.is_hidden==0}">
+					 		<img alt="" src="./image/icon-eye-off.svg">
+					 	</c:if>
+					 	<c:if test="${dto.is_hidden==1}">
+					 		<img alt="" src="./image/icon-eye.svg">
+					 	</c:if>
+				 		
+				 		<span class="icon-button-text" style="color: black;">${dto.is_hidden==1? '숨김취소':'글숨기기'}</span>
 				 	</button>
 					</td>
 				</tr>
@@ -79,14 +85,15 @@ $(function(){
 	$(".btn-hide").click(function(){
 		let confirmation = confirm("정말 숨기시겠습니까?");
 		if (confirmation) {
-		    console.log($(this).attr("num"))
+		    let num = $(this).attr("num"); 
+		    let isHidden = $(this).attr("ishidden"); 
 		    
 		    $.ajax({
 		    	type: "get",
 		    	dataType: "text",
-		    	url:"./hide",
+		    	url:"./hide?memo_id="+num+"&is_hidden="+isHidden,
 		    	success:function(data){
-		    		location.reload()		
+		    		location.reload();
 		    	}
 		    })
 		}	

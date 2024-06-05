@@ -30,7 +30,7 @@ public class BoardService {
         return boardInter.getBoardByMemoId(memo_id);
     }
 	
-	public void updateHidden(int memo_id) {
-		boardInter.updateHidden(memo_id);
+	public void updateHidden(int memo_id, int is_hidden) {
+		boardInter.updateHidden(memo_id, is_hidden);
 	}
 }

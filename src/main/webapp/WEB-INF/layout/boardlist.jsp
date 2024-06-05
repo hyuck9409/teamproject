@@ -33,7 +33,7 @@
  	</button>
  </c:if>
  <c:if test="${sessionScope.loginok == null}">
-	 <button id="btnlogin" class="icon-button-full"
+	 <button id="btnlogin" class="icon-button-full"   
 	 	onclick="location.href='./login'">
  		<img alt="" src="./image/icon-log-in.svg">
  		<span class="icon-button-text">로그인</span>
@@ -57,19 +57,20 @@
 </div>
 <div class="list-container">
 	<c:forEach var="dto" items="${list}">
-		<a href="${root}/detail?user_id=${userdto.user_id}&memo_id=${dto.memo_id}">
-			<div class="list-item ${dto.type=='photocard'? 'photocard' : ''}" 
-			style="background-image: url('${stpath}/${dto.photo}')">
-				<div class="list-item-content">${dto.content}</div>
-				<div class="list-item-writer">${dto.writer}</div>
-			</div>
-		</a>
+		<c:if test="${dto.is_hidden==0}">
+			<a href="${root}/detail?user_id=${userdto.user_id}&memo_id=${dto.memo_id}">
+				<div class="list-item ${dto.type=='photocard'? 'photocard' : ''}" 
+				style="background-image: url('${stpath}/${dto.photo}')">
+					<div class="list-item-content">${dto.content}</div>
+					<div class="list-item-writer">${dto.writer}</div>
+				</div>
+			</a>
+		</c:if>
 	</c:forEach>
 	
 </div>
 <script type="text/javascript">
 	$(function() {
-		
 		
 		// 로그아웃 버튼
 		$("#btnlogout").click(function(){

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import data.dto.BoardDto;
@@ -115,8 +116,9 @@ public class BoardController {
 		return "redirect:./list?user_id="+user_id;
 	}
 	
+	@ResponseBody
 	@GetMapping("/hide")
-	public String updateHidden(
+	public void updateHidden(
 			@RequestParam int memo_id,
 			Model model) {
 		
@@ -124,7 +126,7 @@ public class BoardController {
 		
 		int is_hidden = dto.getIs_hidden()==1 ? 0 : 1;
 		
-		return "layout/writephoto";
+		boardService.updateHidden(memo_id, is_hidden);
 	}
 	
 }

@@ -61,12 +61,39 @@
 		 		<img alt="" src="./image/icon-pen-square.svg">
 		 	</button>
 		 	 <c:if test="${sessionScope.loginok != null}">
-			 	<button class="icon-button">
-			 		<img alt="" src="./image/icon-eye-off.svg">
+		 
+			 	<button class="icon-button btn-hide" num="${dto.memo_id}" ishidden="${dto.is_hidden}">
+		 		 	<c:if test="${dto.is_hidden == 0}">
+				 		<img alt="" src="./image/icon-eye-off.svg">
+		 	 		</c:if>
+		 		 	<c:if test="${dto.is_hidden == 1}">
+				 		<img alt="" src="./image/icon-eye.svg">
+		 	 		</c:if>
 			 	</button>
 			 </c:if>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		$(".btn-hide").click(function(){
+			let confirmation = confirm("정말 숨기시겠습니까?");
+			if (confirmation) {
+			    let num = $(this).attr("num"); 
+			    let isHidden = $(this).attr("ishidden"); 
+			    
+			    $.ajax({
+			    	type: "get",
+			    	dataType: "text",
+			    	url:"./hide?memo_id="+num+"&is_hidden="+isHidden,
+			    	success:function(data){
+			    		location.reload();
+			    	}
+			    })
+			}	
+		});
+	});
+</script>
 </body>
 </html>

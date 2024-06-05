@@ -32,6 +32,6 @@ public interface BoardMapperInter {
 	public  BoardDto getBoardByMemoId(int memo_id);
 		
 	@Update("update memo set is_hidden=#{is_hidden} where memo_id=#{memo_id}")
-	public void updateHidden(int memo_id);
+	public void updateHidden(int memo_id, int is_hidden);
 	
 }
