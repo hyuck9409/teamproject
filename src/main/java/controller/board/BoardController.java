@@ -115,6 +115,16 @@ public class BoardController {
 		return "redirect:./list?user_id="+user_id;
 	}
 	
-	
+	@GetMapping("/hide")
+	public String updateHidden(
+			@RequestParam int memo_id,
+			Model model) {
+		
+		BoardDto dto = boardService.getBoardByMemoId(memo_id);
+		
+		int is_hidden = dto.getIs_hidden()==1 ? 0 : 1;
+		
+		return "layout/writephoto";
+	}
 	
 }

@@ -29,4 +29,8 @@ public class BoardService {
 	public BoardDto getBoardByMemoId(int memo_id) {
         return boardInter.getBoardByMemoId(memo_id);
     }
+	
+	public void updateHidden(int memo_id) {
+		boardInter.updateHidden(memo_id);
+	}
 }
