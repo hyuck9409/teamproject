@@ -15,6 +15,16 @@
 </head>
 <c:set var="stpath" value="https://kr.object.ncloudstorage.com/bitcamp-jsh/photocommon"/>
 <body>
+
+<div class="pos-a">	
+	<div class="logo">
+		<div class="logoimage">
+			<img alt="" src="${root}/image/logo.png" height="100">
+		</div>
+	 	<div class="logotitle">내 생일을<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;축하해줘!</div>
+	</div>	
+</div>
+
 <div class="container">
 	<div class="box">
 		<div class="detail-item"

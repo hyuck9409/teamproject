@@ -90,3 +90,27 @@ body {
 	letter-spacing: var(--letter-spacing-tracking-normal, 0px);
 	
 }
+
+.pos-a{
+	position: absolute;
+	top: 30px;
+	left: 60px;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	gap: 20px;
+}
+
+.logotitle{
+	margin-top: 20px;
+	color: var(--color-slate-50, #FA4EAB);
+	font-feature-settings: 'cv01' on, 'cv11' on, 'cv12' on, 'cv13' on;
+	font-family: "Noto Sans KR";
+	font-size: var(--font-size-text-base, 24px);
+	font-style: normal;
+	font-weight: 900;
+	line-height: var(--line-height-text-base, 30px); /* 150% */
+}

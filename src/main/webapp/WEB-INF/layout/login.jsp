@@ -17,7 +17,10 @@
 <div class="container">
  <div class="box">
 	<div class="logo">
-		<img alt="" src="${root}/image/logo.png" height="100">
+		<div class="logoimage">
+			<img alt="" src="${root}/image/logo.png" height="100">
+		</div>
+	 	<div class="logotitle">내 생일을<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;축하해줘!</div>
 	</div>
  	<form id="loginfrm" action="./checklogin" method="post">
 	 	<div class="login-inputs">

@@ -15,13 +15,22 @@
 </head>
 <body>
 <c:set var="now" value="<%=new java.util.Date()%>" />
+<div class="pos-a">	
+	<div class="logo">
+		<div class="logoimage">
+			<img alt="" src="${root}/image/logo.png" height="100">
+		</div>
+	 	<div class="logotitle">내 생일을<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;축하해줘!</div>
+	</div>	
+</div>
+
 <div class="container">
 	<div class="box">
 		<form action="./inserttext" method="post">
 			<div class="detail-item">
 				<input type="hidden" value="${user_id}"name="user_id">
 				<div class="detail-text">
-					<textarea rows="" cols="" class="detail-textarea" name="content" required="required"></textarea>
+					<textarea rows="" cols="" class="detail-textarea scrollbar" name="content" required="required"></textarea>
 				</div>
 				<div class="detail-writer">
 					<input type="text" name="writer" class="writer transparent-input" 

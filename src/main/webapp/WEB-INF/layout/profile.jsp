@@ -64,8 +64,7 @@
 					<td>${dto.created_at}</td>
 					<td>${dto.is_hidden==1? '숨김':'안숨김'}</td>
 					<td>
-					 <button id="hideButton" class="icon-button-full"
-					 	onclick="location.href='./login'">
+					 <button class="icon-button-full btn-hide" num="${dto.memo_id}">
 				 		<img alt="" src="./image/icon-eye-off.svg">
 				 		<span class="icon-button-text" style="color: black;">글숨기기</span>
 				 	</button>
@@ -76,12 +75,23 @@
 	</table>
 </div>
 <script>
-	document.getElementById('hideButton').addEventListener('click', function() {
-	       let confirmation = confirm("정말 숨기시겠습니까?");
-	       if (confirmation) {
-	           
-	       }
-	   });
+$(function(){
+	$(".btn-hide").click(function(){
+		let confirmation = confirm("정말 숨기시겠습니까?");
+		if (confirmation) {
+		    console.log($(this).attr("num"))
+		    
+		    $.ajax({
+		    	type: "get",
+		    	dataType: "text",
+		    	url:"./hide",
+		    	success:function(data){
+		    		location.reload()		
+		    	}
+		    })
+		}	
+	});
+}); // end function
 </script>
 	
 </body>

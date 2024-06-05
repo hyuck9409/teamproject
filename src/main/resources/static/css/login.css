@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-.logo{
-	text-align: center;
-	margin-bottom: 30px;
-}
 .box{
 	margin-top: -150px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .login-inputs {
